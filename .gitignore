@@ -1,7 +1,7 @@
 ## Compiled source #
 *.com
 *.class
-*.dll
+##*.dll
 *.exe
 *.ilk
 *.o
@@ -39,7 +39,7 @@ Thumbs.db
 *xcuserdata*
 
 ## SDL contrib
-RecastDemo/Contrib/SDL/*
+##RecastDemo/Contrib/SDL/*
 
 ## Generated doc files
 Docs/html
