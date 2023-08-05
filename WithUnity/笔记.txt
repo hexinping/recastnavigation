@@ -1,3 +1,9 @@
 开工程UnityNavMeshExporter会有两个目录，
 recastnavigation-unitynavmeshexporter中是导出插件和示例工程，扩展自原始的recastnavigation.工程，可以读取从Unity导出的NavMeshi查看。
 NavMeshExporter目录是使用编译好的插件来导出Unity NavMesh的示例工程。
+
+1  使用工具 Tools/Export NavMesh obj，导出对应的obj文件，输出目录直接在 ../recastnavigation-unitynavmeshexporter/RecastDemo/Bin/Meshes/ 下，
+{
+   导出时需要把需要导出的对象加上NavMesh标签
+}
+2 打开 RecastDemo/Bin/RecastDemo.exe 文件，选择对应的obj文件即可
