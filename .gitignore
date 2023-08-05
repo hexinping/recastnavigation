@@ -2,7 +2,7 @@
 *.com
 *.class
 ##*.dll
-*.exe
+#*.exe
 *.ilk
 *.o
 *.pdb
@@ -17,7 +17,7 @@ RecastDemo/Bin/Tests
 RecastDemo/Build
 
 # Ignore meshes
-RecastDemo/Bin/Meshes/*
+# RecastDemo/Bin/Meshes/*
 
 ## Logs and databases #
 *.log
