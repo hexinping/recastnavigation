@@ -1,0 +1,3 @@
+开工程UnityNavMeshExporter会有两个目录，
+recastnavigation-unitynavmeshexporter中是导出插件和示例工程，扩展自原始的recastnavigation.工程，可以读取从Unity导出的NavMeshi查看。
+NavMeshExporter目录是使用编译好的插件来导出Unity NavMesh的示例工程。
