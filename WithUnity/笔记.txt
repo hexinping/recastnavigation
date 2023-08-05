@@ -7,3 +7,8 @@ NavMeshExporter目录是使用编译好的插件来导出Unity NavMesh的示例�
    导出时需要把需要导出的对象加上NavMesh标签
 }
 2 打开 RecastDemo/Bin/RecastDemo.exe 文件，选择对应的obj文件即可
+
+
+工作流：
+1 客户端Bake后，导出obj数据给服务器使用
+2 服务器发送坐标给客户端，客户端设置NavMeshAgent的destination 即可
