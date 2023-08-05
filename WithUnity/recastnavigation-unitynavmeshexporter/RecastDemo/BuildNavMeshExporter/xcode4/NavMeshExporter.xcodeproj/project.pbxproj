@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		75E88D472221910C007B4FD6 /* DetourNavMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D3F2221910C007B4FD6 /* DetourNavMesh.cpp */; };
+		75E88D482221910C007B4FD6 /* DetourCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D402221910C007B4FD6 /* DetourCommon.cpp */; };
+		75E88D492221910C007B4FD6 /* DetourNavMeshBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D412221910C007B4FD6 /* DetourNavMeshBuilder.cpp */; };
+		75E88D4A2221910C007B4FD6 /* DetourNavMeshQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D422221910C007B4FD6 /* DetourNavMeshQuery.cpp */; };
+		75E88D4B2221910C007B4FD6 /* DetourAssert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D432221910C007B4FD6 /* DetourAssert.cpp */; };
+		75E88D4C2221910C007B4FD6 /* DetourNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D442221910C007B4FD6 /* DetourNode.cpp */; };
+		75E88D4D2221910C007B4FD6 /* DetourAlloc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D452221910C007B4FD6 /* DetourAlloc.cpp */; };
+		75E88D612221913F007B4FD6 /* RecastMeshDetail.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D552221913F007B4FD6 /* RecastMeshDetail.cpp */; };
+		75E88D622221913F007B4FD6 /* Recast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D562221913F007B4FD6 /* Recast.cpp */; };
+		75E88D632221913F007B4FD6 /* RecastArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D572221913F007B4FD6 /* RecastArea.cpp */; };
+		75E88D642221913F007B4FD6 /* RecastLayers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D582221913F007B4FD6 /* RecastLayers.cpp */; };
+		75E88D652221913F007B4FD6 /* RecastRegion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D592221913F007B4FD6 /* RecastRegion.cpp */; };
+		75E88D662221913F007B4FD6 /* RecastMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D5A2221913F007B4FD6 /* RecastMesh.cpp */; };
+		75E88D672221913F007B4FD6 /* RecastContour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D5B2221913F007B4FD6 /* RecastContour.cpp */; };
+		75E88D682221913F007B4FD6 /* RecastAssert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D5C2221913F007B4FD6 /* RecastAssert.cpp */; };
+		75E88D692221913F007B4FD6 /* RecastAlloc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D5D2221913F007B4FD6 /* RecastAlloc.cpp */; };
+		75E88D6A2221913F007B4FD6 /* RecastRasterization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D5E2221913F007B4FD6 /* RecastRasterization.cpp */; };
+		75E88D6B2221913F007B4FD6 /* RecastFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D5F2221913F007B4FD6 /* RecastFilter.cpp */; };
+		75E88D6F22219158007B4FD6 /* NavMeshExporter_Unity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75E88D6E22219158007B4FD6 /* NavMeshExporter_Unity.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		75E88D2022218EC8007B4FD6 /* NavMeshExporter.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavMeshExporter.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		75E88D2322218EC8007B4FD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75E88D352221910C007B4FD6 /* DetourAlloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetourAlloc.h; sourceTree = "<group>"; };
+		75E88D362221910C007B4FD6 /* DetourNavMeshQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetourNavMeshQuery.h; sourceTree = "<group>"; };
+		75E88D372221910C007B4FD6 /* DetourNavMeshBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetourNavMeshBuilder.h; sourceTree = "<group>"; };
+		75E88D382221910C007B4FD6 /* DetourNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetourNode.h; sourceTree = "<group>"; };
+		75E88D392221910C007B4FD6 /* DetourCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetourCommon.h; sourceTree = "<group>"; };
+		75E88D3A2221910C007B4FD6 /* DetourAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetourAssert.h; sourceTree = "<group>"; };
+		75E88D3B2221910C007B4FD6 /* DetourStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetourStatus.h; sourceTree = "<group>"; };
+		75E88D3C2221910C007B4FD6 /* DetourMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetourMath.h; sourceTree = "<group>"; };
+		75E88D3D2221910C007B4FD6 /* DetourNavMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetourNavMesh.h; sourceTree = "<group>"; };
+		75E88D3F2221910C007B4FD6 /* DetourNavMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DetourNavMesh.cpp; sourceTree = "<group>"; };
+		75E88D402221910C007B4FD6 /* DetourCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DetourCommon.cpp; sourceTree = "<group>"; };
+		75E88D412221910C007B4FD6 /* DetourNavMeshBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DetourNavMeshBuilder.cpp; sourceTree = "<group>"; };
+		75E88D422221910C007B4FD6 /* DetourNavMeshQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DetourNavMeshQuery.cpp; sourceTree = "<group>"; };
+		75E88D432221910C007B4FD6 /* DetourAssert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DetourAssert.cpp; sourceTree = "<group>"; };
+		75E88D442221910C007B4FD6 /* DetourNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DetourNode.cpp; sourceTree = "<group>"; };
+		75E88D452221910C007B4FD6 /* DetourAlloc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DetourAlloc.cpp; sourceTree = "<group>"; };
+		75E88D512221913F007B4FD6 /* Recast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recast.h; sourceTree = "<group>"; };
+		75E88D522221913F007B4FD6 /* RecastAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecastAssert.h; sourceTree = "<group>"; };
+		75E88D532221913F007B4FD6 /* RecastAlloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecastAlloc.h; sourceTree = "<group>"; };
+		75E88D552221913F007B4FD6 /* RecastMeshDetail.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecastMeshDetail.cpp; sourceTree = "<group>"; };
+		75E88D562221913F007B4FD6 /* Recast.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Recast.cpp; sourceTree = "<group>"; };
+		75E88D572221913F007B4FD6 /* RecastArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecastArea.cpp; sourceTree = "<group>"; };
+		75E88D582221913F007B4FD6 /* RecastLayers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecastLayers.cpp; sourceTree = "<group>"; };
+		75E88D592221913F007B4FD6 /* RecastRegion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecastRegion.cpp; sourceTree = "<group>"; };
+		75E88D5A2221913F007B4FD6 /* RecastMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecastMesh.cpp; sourceTree = "<group>"; };
+		75E88D5B2221913F007B4FD6 /* RecastContour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecastContour.cpp; sourceTree = "<group>"; };
+		75E88D5C2221913F007B4FD6 /* RecastAssert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecastAssert.cpp; sourceTree = "<group>"; };
+		75E88D5D2221913F007B4FD6 /* RecastAlloc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecastAlloc.cpp; sourceTree = "<group>"; };
+		75E88D5E2221913F007B4FD6 /* RecastRasterization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecastRasterization.cpp; sourceTree = "<group>"; };
+		75E88D5F2221913F007B4FD6 /* RecastFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecastFilter.cpp; sourceTree = "<group>"; };
+		75E88D6D22219158007B4FD6 /* NavMeshExporter_Unity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavMeshExporter_Unity.h; sourceTree = "<group>"; };
+		75E88D6E22219158007B4FD6 /* NavMeshExporter_Unity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NavMeshExporter_Unity.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		75E88D1D22218EC8007B4FD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		75E88D1722218EC8007B4FD6 = {
+			isa = PBXGroup;
+			children = (
+				75E88D6C22219158007B4FD6 /* NavMeshExporter */,
+				75E88D4E2221913F007B4FD6 /* Recast */,
+				75E88D322221910C007B4FD6 /* Detour */,
+				75E88D2222218EC8007B4FD6 /* Resources */,
+				75E88D2122218EC8007B4FD6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		75E88D2122218EC8007B4FD6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75E88D2022218EC8007B4FD6 /* NavMeshExporter.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75E88D2222218EC8007B4FD6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75E88D2322218EC8007B4FD6 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		75E88D322221910C007B4FD6 /* Detour */ = {
+			isa = PBXGroup;
+			children = (
+				75E88D342221910C007B4FD6 /* Include */,
+				75E88D3E2221910C007B4FD6 /* Source */,
+			);
+			name = Detour;
+			path = ../../../Detour;
+			sourceTree = "<group>";
+		};
+		75E88D342221910C007B4FD6 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				75E88D352221910C007B4FD6 /* DetourAlloc.h */,
+				75E88D362221910C007B4FD6 /* DetourNavMeshQuery.h */,
+				75E88D372221910C007B4FD6 /* DetourNavMeshBuilder.h */,
+				75E88D382221910C007B4FD6 /* DetourNode.h */,
+				75E88D392221910C007B4FD6 /* DetourCommon.h */,
+				75E88D3A2221910C007B4FD6 /* DetourAssert.h */,
+				75E88D3B2221910C007B4FD6 /* DetourStatus.h */,
+				75E88D3C2221910C007B4FD6 /* DetourMath.h */,
+				75E88D3D2221910C007B4FD6 /* DetourNavMesh.h */,
+			);
+			path = Include;
+			sourceTree = "<group>";
+		};
+		75E88D3E2221910C007B4FD6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				75E88D3F2221910C007B4FD6 /* DetourNavMesh.cpp */,
+				75E88D402221910C007B4FD6 /* DetourCommon.cpp */,
+				75E88D412221910C007B4FD6 /* DetourNavMeshBuilder.cpp */,
+				75E88D422221910C007B4FD6 /* DetourNavMeshQuery.cpp */,
+				75E88D432221910C007B4FD6 /* DetourAssert.cpp */,
+				75E88D442221910C007B4FD6 /* DetourNode.cpp */,
+				75E88D452221910C007B4FD6 /* DetourAlloc.cpp */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		75E88D4E2221913F007B4FD6 /* Recast */ = {
+			isa = PBXGroup;
+			children = (
+				75E88D502221913F007B4FD6 /* Include */,
+				75E88D542221913F007B4FD6 /* Source */,
+			);
+			name = Recast;
+			path = ../../../Recast;
+			sourceTree = "<group>";
+		};
+		75E88D502221913F007B4FD6 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				75E88D512221913F007B4FD6 /* Recast.h */,
+				75E88D522221913F007B4FD6 /* RecastAssert.h */,
+				75E88D532221913F007B4FD6 /* RecastAlloc.h */,
+			);
+			path = Include;
+			sourceTree = "<group>";
+		};
+		75E88D542221913F007B4FD6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				75E88D552221913F007B4FD6 /* RecastMeshDetail.cpp */,
+				75E88D562221913F007B4FD6 /* Recast.cpp */,
+				75E88D572221913F007B4FD6 /* RecastArea.cpp */,
+				75E88D582221913F007B4FD6 /* RecastLayers.cpp */,
+				75E88D592221913F007B4FD6 /* RecastRegion.cpp */,
+				75E88D5A2221913F007B4FD6 /* RecastMesh.cpp */,
+				75E88D5B2221913F007B4FD6 /* RecastContour.cpp */,
+				75E88D5C2221913F007B4FD6 /* RecastAssert.cpp */,
+				75E88D5D2221913F007B4FD6 /* RecastAlloc.cpp */,
+				75E88D5E2221913F007B4FD6 /* RecastRasterization.cpp */,
+				75E88D5F2221913F007B4FD6 /* RecastFilter.cpp */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		75E88D6C22219158007B4FD6 /* NavMeshExporter */ = {
+			isa = PBXGroup;
+			children = (
+				75E88D6D22219158007B4FD6 /* NavMeshExporter_Unity.h */,
+				75E88D6E22219158007B4FD6 /* NavMeshExporter_Unity.cpp */,
+			);
+			name = NavMeshExporter;
+			path = ../../../NavMeshExporter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		75E88D1F22218EC8007B4FD6 /* NavMeshExporter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75E88D2622218EC8007B4FD6 /* Build configuration list for PBXNativeTarget "NavMeshExporter" */;
+			buildPhases = (
+				75E88D1C22218EC8007B4FD6 /* Sources */,
+				75E88D1D22218EC8007B4FD6 /* Frameworks */,
+				75E88D1E22218EC8007B4FD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NavMeshExporter;
+			productName = NavMeshExporter;
+			productReference = 75E88D2022218EC8007B4FD6 /* NavMeshExporter.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75E88D1822218EC8007B4FD6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = yaukeywang;
+				TargetAttributes = {
+					75E88D1F22218EC8007B4FD6 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 75E88D1B22218EC8007B4FD6 /* Build configuration list for PBXProject "NavMeshExporter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 75E88D1722218EC8007B4FD6;
+			productRefGroup = 75E88D2122218EC8007B4FD6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				75E88D1F22218EC8007B4FD6 /* NavMeshExporter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75E88D1E22218EC8007B4FD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		75E88D1C22218EC8007B4FD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75E88D4D2221910C007B4FD6 /* DetourAlloc.cpp in Sources */,
+				75E88D4C2221910C007B4FD6 /* DetourNode.cpp in Sources */,
+				75E88D492221910C007B4FD6 /* DetourNavMeshBuilder.cpp in Sources */,
+				75E88D472221910C007B4FD6 /* DetourNavMesh.cpp in Sources */,
+				75E88D4B2221910C007B4FD6 /* DetourAssert.cpp in Sources */,
+				75E88D4A2221910C007B4FD6 /* DetourNavMeshQuery.cpp in Sources */,
+				75E88D682221913F007B4FD6 /* RecastAssert.cpp in Sources */,
+				75E88D6A2221913F007B4FD6 /* RecastRasterization.cpp in Sources */,
+				75E88D642221913F007B4FD6 /* RecastLayers.cpp in Sources */,
+				75E88D652221913F007B4FD6 /* RecastRegion.cpp in Sources */,
+				75E88D632221913F007B4FD6 /* RecastArea.cpp in Sources */,
+				75E88D482221910C007B4FD6 /* DetourCommon.cpp in Sources */,
+				75E88D622221913F007B4FD6 /* Recast.cpp in Sources */,
+				75E88D662221913F007B4FD6 /* RecastMesh.cpp in Sources */,
+				75E88D692221913F007B4FD6 /* RecastAlloc.cpp in Sources */,
+				75E88D6B2221913F007B4FD6 /* RecastFilter.cpp in Sources */,
+				75E88D672221913F007B4FD6 /* RecastContour.cpp in Sources */,
+				75E88D612221913F007B4FD6 /* RecastMeshDetail.cpp in Sources */,
+				75E88D6F22219158007B4FD6 /* NavMeshExporter_Unity.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		75E88D2422218EC8007B4FD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		75E88D2522218EC8007B4FD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		75E88D2722218EC8007B4FD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
+				HEADER_SEARCH_PATHS = (
+					../../../Detour/Include,
+					../../../Recast/Include,
+					../../../NavMeshExporter/Include,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaukeywang.NavMeshExporter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SYMROOT = ../../Bin;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		75E88D2822218EC8007B4FD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
+				HEADER_SEARCH_PATHS = (
+					../../../Detour/Include,
+					../../../Recast/Include,
+					../../../NavMeshExporter/Include,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaukeywang.NavMeshExporter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SYMROOT = ../../Bin;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75E88D1B22218EC8007B4FD6 /* Build configuration list for PBXProject "NavMeshExporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75E88D2422218EC8007B4FD6 /* Debug */,
+				75E88D2522218EC8007B4FD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75E88D2622218EC8007B4FD6 /* Build configuration list for PBXNativeTarget "NavMeshExporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75E88D2722218EC8007B4FD6 /* Debug */,
+				75E88D2822218EC8007B4FD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 75E88D1822218EC8007B4FD6 /* Project object */;
+}

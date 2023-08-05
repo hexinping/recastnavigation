@@ -1,0 +1,13 @@
+Recast.app
+*.dll
+*.lib
+*.exp
+*.bin
+*.unitynavmesh
+!SDL2.dll
+!Meshes/dungeon.obj
+!Meshes/nav_test.obj
+NavMeshExporter.build/
+NavMeshExporter.bundle/
+NavMeshExporter.bundle.dSYM/
+RecastDemo.dSYM/
