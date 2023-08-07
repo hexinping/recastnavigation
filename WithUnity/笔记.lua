@@ -43,7 +43,7 @@ NavMeshExporter目录是使用编译好的插件来导出Unity NavMesh的示例�
    1 客户端导出模型数据obj文件给recastnavigation使用
    2 在recastnavigation中生成网格数据
    3 封装Unity调用recastnavigation的动态库，在Unity中使用
-   4 客户端服务器都使用recastnavigation来进行寻路
+   4 客户端服务器都使用recastnavigation来进行寻路，支持动态寻路的
 }
 
 
