@@ -44,7 +44,7 @@ static const int g_nsamples = sizeof(g_samples) / sizeof(SampleItem);
 extern "C" {
 
 	//自动build和Save 生成导航数据
-	_declspec(dllexport) bool BuildAndSave(char* obj_path, char* navmesh_path) {
+	_declspec(dllexport) bool BuildAndSave(char* obj_path, char* navmesh_path, StructParam_Unity* params) {
 
 		BuildContext* ctx = new BuildContext;
 		Sample* sample = g_samples[0].create();
@@ -54,10 +54,13 @@ extern "C" {
 		geom->load(ctx, obj_path);
 		sample->handleMeshChanged(geom);
 
-		//2 build
+		//2 set params
+		sample->setParamFromUnity(params);
+		
+		//3 build
 		sample->handleBuild();
 
-		//3 save to navmesh
+		//4 save to navmesh
 		sample->handleSave(navmesh_path);
 
 		delete sample;

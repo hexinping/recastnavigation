@@ -87,6 +87,24 @@ struct SampleTool
 	virtual void handleUpdate(const float dt) = 0;
 };
 
+struct StructParam_Unity
+{
+	float m_cellSize;
+	float m_cellHeight;
+	float m_agentHeight;
+	float m_agentRadius;
+	float m_agentMaxClimb;
+	float m_agentMaxSlope;
+	float m_regionMinSize;
+	float m_regionMergeSize;
+	float m_edgeMaxLen;
+	float m_edgeMaxError;
+	float m_vertsPerPoly;
+	float m_detailSampleDist;
+	float m_detailSampleMaxError;
+	int m_partitionType;
+};
+
 struct SampleToolState {
 	virtual ~SampleToolState() {}
 	virtual void init(class Sample* sample) = 0;
@@ -141,6 +159,7 @@ protected:
 public:
 	Sample();
 	virtual ~Sample();
+	void setParamFromUnity(StructParam_Unity *params);
 	void saveAll(const char* path, const dtNavMesh* mesh);
 	dtNavMesh* loadAll(const char* path);
 	void setContext(BuildContext* ctx) { m_ctx = ctx; }

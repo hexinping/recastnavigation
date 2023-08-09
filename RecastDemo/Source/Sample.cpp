@@ -269,6 +269,25 @@ void Sample::handleStep()
 		m_tool->handleStep();
 }
 
+
+void Sample::setParamFromUnity(StructParam_Unity *params)
+{
+	m_cellSize = params->m_cellSize;
+	m_cellHeight = params->m_cellHeight;
+	m_agentHeight = params->m_agentHeight;
+	m_agentRadius = params->m_agentRadius;
+	m_agentMaxClimb = params->m_agentMaxClimb;
+	m_agentMaxSlope = params->m_agentMaxSlope;
+	m_regionMinSize = params->m_regionMinSize;
+	m_regionMergeSize = params->m_regionMergeSize;
+	m_edgeMaxLen = params->m_edgeMaxLen;
+	m_edgeMaxError = params->m_edgeMaxError;
+	m_vertsPerPoly = params->m_vertsPerPoly;
+	m_detailSampleDist = params->m_detailSampleDist;
+	m_detailSampleMaxError = params->m_detailSampleMaxError;
+	m_partitionType = params->m_partitionType;
+}
+
 bool Sample::handleBuild()
 {
 	return true;
