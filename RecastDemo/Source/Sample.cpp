@@ -274,6 +274,11 @@ bool Sample::handleBuild()
 	return true;
 }
 
+bool Sample::handleSave(char* navmesh_path)
+{
+	return true;
+}
+
 void Sample::handleUpdate(const float dt)
 {
 	if (m_tool)

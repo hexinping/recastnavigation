@@ -135,13 +135,14 @@ protected:
 
 	SampleDebugDraw m_dd;
 	
-	dtNavMesh* loadAll(const char* path);
-	void saveAll(const char* path, const dtNavMesh* mesh);
+	
+	
 
 public:
 	Sample();
 	virtual ~Sample();
-	
+	void saveAll(const char* path, const dtNavMesh* mesh);
+	dtNavMesh* loadAll(const char* path);
 	void setContext(BuildContext* ctx) { m_ctx = ctx; }
 	
 	void setTool(SampleTool* tool);
@@ -160,6 +161,7 @@ public:
 	virtual void handleRenderOverlay(double* proj, double* model, int* view);
 	virtual void handleMeshChanged(class InputGeom* geom);
 	virtual bool handleBuild();
+	virtual bool handleSave(char *navmesh_path);
 	virtual void handleUpdate(const float dt);
 	virtual void collectSettings(struct BuildSettings& settings);
 

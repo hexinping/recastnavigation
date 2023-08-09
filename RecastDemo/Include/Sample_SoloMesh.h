@@ -76,6 +76,8 @@ public:
 	virtual void handleMeshChanged(class InputGeom* geom);
 	virtual bool handleBuild();
 
+	virtual bool handleSave(char* navmesh_path);
+
 private:
 	// Explicitly disabled copy constructor and copy assignment operator.
 	Sample_SoloMesh(const Sample_SoloMesh&);

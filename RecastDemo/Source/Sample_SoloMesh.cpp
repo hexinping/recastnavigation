@@ -753,3 +753,9 @@ bool Sample_SoloMesh::handleBuild()
 
 	return true;
 }
+
+bool Sample_SoloMesh::handleSave(char* navmesh_path)
+{
+	Sample::saveAll(navmesh_path, m_navMesh);
+	return true;
+}
