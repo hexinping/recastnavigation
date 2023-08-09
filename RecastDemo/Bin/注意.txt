@@ -1,0 +1,1 @@
+demo里默认使用的是solo_navmesh.bin文件，自己导出的生成的bin文件需要改成这个名字，并且放在跟demo的exe文件同级目录
