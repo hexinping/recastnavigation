@@ -266,3 +266,82 @@ project "Tests"
 			"SDL2.framework",
 			"Cocoa.framework",
 		}
+
+project "UnityRecast"
+	language "C++"
+	kind "SharedLib"
+	includedirs { 
+		"../UnityRecast/Include",
+		"../RecastDemo/Include",
+		"../RecastDemo/Contrib",
+		"../RecastDemo/Contrib/fastlz",
+		"../DebugUtils/Include",
+		"../Detour/Include",
+		"../DetourCrowd/Include",
+		"../DetourTileCache/Include",
+		"../Recast/Include"
+	}
+	files	{ 
+		"../UnityRecast/Include/*.h",
+		"../UnityRecast/Source/*.cpp",
+		"../RecastDemo/Include/*.h",
+		"../RecastDemo/Source/*.cpp",
+		"../RecastDemo/Contrib/fastlz/*.h",
+		"../RecastDemo/Contrib/fastlz/*.c"
+	}
+
+	removefiles("../RecastDemo/Source/main.cpp")
+
+	-- project dependencies
+	links { 
+		"DebugUtils",
+		"Detour",
+		"DetourCrowd",
+		"DetourTileCache",
+		"Recast"
+	}
+
+	-- distribute executable in RecastDemo/Bin directory
+	targetdir "Bin"
+
+	-- linux library cflags and libs
+	configuration { "linux", "gmake" }
+		buildoptions { 
+			"`pkg-config --cflags sdl2`",
+			"`pkg-config --cflags gl`",
+			"`pkg-config --cflags glu`",
+			"-Wno-ignored-qualifiers",
+			"-Wno-class-memaccess"
+
+		}
+		linkoptions { 
+			"`pkg-config --libs sdl2`",
+			"`pkg-config --libs gl`",
+			"`pkg-config --libs glu`" 
+		}
+
+	-- windows library cflags and libs
+	configuration { "windows" }
+		includedirs { "../RecastDemo/Contrib/SDL/include" }
+		libdirs { "../RecastDemo/Contrib/SDL/lib/%{cfg.architecture:gsub('x86_64', 'x64')}" }
+		debugdir "../RecastDemo/Bin/"
+		links { 
+			"glu32",
+			"opengl32",
+			"SDL2",
+			"SDL2main",
+		}
+		postbuildcommands {
+			-- Copy the SDL2 dll to the Bin folder.
+			'{COPY} "%{path.getabsolute("Contrib/SDL/lib/" .. cfg.architecture:gsub("x86_64", "x64") .. "/SDL2.dll")}" "%{cfg.targetdir}"'
+		}
+
+	-- mac includes and libs
+	configuration { "macosx" }
+		kind "ConsoleApp" -- xcode4 failes to run the project if using WindowedApp
+		includedirs { "/Library/Frameworks/SDL2.framework/Headers" }
+		links { 
+			"OpenGL.framework", 
+			"SDL2.framework",
+			"Cocoa.framework",
+		}
