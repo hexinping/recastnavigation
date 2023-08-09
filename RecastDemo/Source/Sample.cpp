@@ -249,7 +249,12 @@ void Sample::handleCommonSettings()
 void Sample::handleClick(const float* s, const float* p, bool shift)
 {
 	if (m_tool)
+	{
+		const char* logStr = shift?startClick:endClick;
+		m_ctx->log(RC_LOG_ERROR, " %s:  %.3f, %.3f, %.3f ", logStr,p[0],p[1],p[2]);
 		m_tool->handleClick(s, p, shift);
+	}
+		
 }
 
 void Sample::handleToggle()

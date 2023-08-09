@@ -104,6 +104,9 @@ protected:
 	class dtNavMeshQuery* m_navQuery;
 	class dtCrowd* m_crowd;
 
+	const char* startClick = "start pos";
+	const char* endClick = "end pos";
+
 	unsigned char m_navMeshDrawFlags;
 
 	float m_cellSize;
