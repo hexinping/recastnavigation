@@ -80,6 +80,14 @@ void Sample_SoloMesh::cleanup()
 	m_navMesh = 0;
 }
 
+bool Sample_SoloMesh::LoadNavMesh(char* navMeshPath)
+{
+	dtFreeNavMesh(m_navMesh);
+	m_navMesh = Sample::loadAll(navMeshPath);
+	m_navQuery->init(m_navMesh, 2048);
+	return true;
+}
+
 void Sample_SoloMesh::handleSettings()
 {
 	Sample::handleCommonSettings();

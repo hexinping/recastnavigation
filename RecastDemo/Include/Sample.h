@@ -161,7 +161,7 @@ public:
 	virtual ~Sample();
 	void setParamFromUnity(StructParam_Unity *params);
 	void saveAll(const char* path, const dtNavMesh* mesh);
-	dtNavMesh* loadAll(const char* path);
+	static dtNavMesh* loadAll(const char* path);
 	void setContext(BuildContext* ctx) { m_ctx = ctx; }
 	
 	void setTool(SampleTool* tool);

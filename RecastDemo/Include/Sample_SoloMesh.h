@@ -78,6 +78,8 @@ public:
 
 	virtual bool handleSave(char* navmesh_path);
 
+	bool LoadNavMesh(char *navMeshPath);
+
 private:
 	// Explicitly disabled copy constructor and copy assignment operator.
 	Sample_SoloMesh(const Sample_SoloMesh&);
