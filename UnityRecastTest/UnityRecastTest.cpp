@@ -17,6 +17,23 @@ int main()
 		printf("文件加载失败=============");
 	}
 
+	float start[3];
+	float end[3];
+
+	start[0] = 51.938f;
+	start[1] = 0.0f;
+	start[2] = 4.212f;
+
+	end[0] = 50.910f;
+	end[1] = 0.0f;
+	end[2] = 15.596f;
+
+	float hitpos[3];
+	bool isHit = Raycast(start, end, hitpos);
+	if (isHit)
+	{
+		printf("碰撞点 %.3f  %.3f  %.3f=============", hitpos[0], hitpos[1], hitpos[2]);
+	}
 	return 0;
 }
 

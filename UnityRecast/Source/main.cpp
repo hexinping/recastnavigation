@@ -163,7 +163,7 @@ bool LoadNavMesh(const char* navmesh_path)
 
 
 //射线检测碰撞点
-bool Raycast(float* m_spos, float* m_epos, float* m_straightPath)
+bool Raycast(float* m_spos, float* m_epos, float* m_hitPos)
 {
 	bool m_hitResult = false;
 
@@ -175,6 +175,11 @@ bool Raycast(float* m_spos, float* m_epos, float* m_straightPath)
 	dtPolyRef m_startRef;
 	dtPolyRef m_endRef;
 
+	if (m_navQuery == NULL)
+	{
+		m_navQuery = new dtNavMeshQuery();
+	}
+
 	m_navQuery->findNearestPoly(m_spos, m_polyPickExt, &m_filter, &m_startRef, 0);
 	m_navQuery->findNearestPoly(m_epos, m_polyPickExt, &m_filter, &m_endRef, 0);
 	int m_nstraightPath = 0;
@@ -184,12 +189,12 @@ bool Raycast(float* m_spos, float* m_epos, float* m_straightPath)
 		int m_npolys = 0;
 		m_nstraightPath = 2;
 
-		m_straightPath[0] = m_spos[0];
-		m_straightPath[1] = m_spos[1];
-		m_straightPath[2] = m_spos[2];
+		//m_straightPath[0] = m_spos[0];
+		//m_straightPath[1] = m_spos[1];
+		//m_straightPath[2] = m_spos[2];
 
 		float m_hitNormal[3];
-		float m_hitPos[3];
+		//float m_hitPos[3];
 
 		dtPolyRef m_polys[MAX_POLYS];
 		m_navQuery->raycast(m_startRef, m_spos, m_epos, &m_filter, &t, m_hitNormal, m_polys, &m_npolys, MAX_POLYS);
@@ -205,14 +210,14 @@ bool Raycast(float* m_spos, float* m_epos, float* m_straightPath)
 			dtVlerp(m_hitPos, m_spos, m_epos, t);
 			m_hitResult = true;
 		}
-		// Adjust height.
+		//// Adjust height.
 		if (m_npolys > 0)
 		{
 			float h = 0;
 			m_navQuery->getPolyHeight(m_polys[m_npolys - 1], m_hitPos, &h);
 			m_hitPos[1] = h;
 		}
-		dtVcopy(&m_straightPath[3], m_hitPos);
+		//dtVcopy(m_straightPath, m_hitPos);
 	}
 	return m_hitResult;
 }
@@ -254,5 +259,7 @@ extern "C" {
 
 
 }
+
+
 
 
