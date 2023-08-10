@@ -20,7 +20,7 @@ int main()
 	float start[3];
 	float end[3];
 
-	start[0] = 51.938f;
+	/*start[0] = 51.938f;
 	start[1] = 0.0f;
 	start[2] = 4.212f;
 
@@ -33,7 +33,39 @@ int main()
 	if (isHit)
 	{
 		printf("碰撞点 %.3f  %.3f  %.3f=============", hitpos[0], hitpos[1], hitpos[2]);
+	}*/
+
+	/*start[0] = 53.556f;
+	start[1] = 0.0f;
+	start[2] = 3.589f;
+
+	end[0] = 49.368f;
+	end[1] = 0.0f;
+	end[2] = -21.540f;*/
+
+	start[0] = 100.992f;
+	start[1] = 0.0f;
+	start[2] = 17.095f;
+
+	end[0] = 63.017f;
+	end[1] = 0.0f;
+	end[2] = 17.095f;
+
+	float pathPoint[2048 * 3];
+	int pointCount;
+
+	//3个数值算一个点,如果到终点之间有阻碍最后的点会靠近阻碍点
+	bool isFind = FindPath(start, end, pathPoint, &pointCount);
+	printf("路点个数：%d \n", pointCount);
+	if (isFind && pointCount > 0)
+	{
+		for (int i = 0; i < pointCount; i++)
+		{
+			printf("路点 %.3f  %.3f  %.3f=============\n", pathPoint[3*i], pathPoint[3 * i+1],pathPoint[3 * i+2]);
+		}
 	}
+
+
 	return 0;
 }
 
