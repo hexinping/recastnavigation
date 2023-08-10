@@ -161,10 +161,72 @@ bool LoadNavMesh(const char* navmesh_path)
 	return ret == DT_SUCCESS;
 }
 
+
+//射线检测碰撞点
+bool Raycast(float* m_spos, float* m_epos, float* m_straightPath)
+{
+	bool m_hitResult = false;
+
+	float m_polyPickExt[3];
+	m_polyPickExt[0] = 2;
+	m_polyPickExt[1] = 4;
+	m_polyPickExt[2] = 2;
+
+	dtPolyRef m_startRef;
+	dtPolyRef m_endRef;
+
+	m_navQuery->findNearestPoly(m_spos, m_polyPickExt, &m_filter, &m_startRef, 0);
+	m_navQuery->findNearestPoly(m_epos, m_polyPickExt, &m_filter, &m_endRef, 0);
+	int m_nstraightPath = 0;
+	if (m_startRef)
+	{
+		float t = 0;
+		int m_npolys = 0;
+		m_nstraightPath = 2;
+
+		m_straightPath[0] = m_spos[0];
+		m_straightPath[1] = m_spos[1];
+		m_straightPath[2] = m_spos[2];
+
+		float m_hitNormal[3];
+		float m_hitPos[3];
+
+		dtPolyRef m_polys[MAX_POLYS];
+		m_navQuery->raycast(m_startRef, m_spos, m_epos, &m_filter, &t, m_hitNormal, m_polys, &m_npolys, MAX_POLYS);
+		if (t > 1)
+		{
+			// No hit
+			dtVcopy(m_hitPos, m_epos);
+			m_hitResult = false;
+		}
+		else
+		{
+			// Hit
+			dtVlerp(m_hitPos, m_spos, m_epos, t);
+			m_hitResult = true;
+		}
+		// Adjust height.
+		if (m_npolys > 0)
+		{
+			float h = 0;
+			m_navQuery->getPolyHeight(m_polys[m_npolys - 1], m_hitPos, &h);
+			m_hitPos[1] = h;
+		}
+		dtVcopy(&m_straightPath[3], m_hitPos);
+	}
+	return m_hitResult;
+}
+
+//寻路
+bool FindPath(char* navmesh_path)
+{
+	return true;
+}
+
 extern "C" {
 
 	//自动build和Save 生成导航数据
-	_declspec(dllexport) bool BuildAndSave(char* obj_path, char* navmesh_path, StructParam_Unity* params) {
+	__declspec(dllexport) bool BuildAndSave(char* obj_path, char* navmesh_path, StructParam_Unity* params) {
 
 		BuildContext* ctx = new BuildContext;
 		Sample* sample = g_samples[0].create();
@@ -190,83 +252,7 @@ extern "C" {
 
 	}
 
-	
-
-	//射线检测碰撞点
-	_declspec(dllexport) bool Raycast(float* m_spos, float* m_epos, float* m_straightPath)
-	{
-		bool m_hitResult = false;
-
-		float m_polyPickExt[3];
-		m_polyPickExt[0] = 2;
-		m_polyPickExt[1] = 4;
-		m_polyPickExt[2] = 2;
-
-		dtPolyRef m_startRef;
-		dtPolyRef m_endRef;
-
-		m_navQuery->findNearestPoly(m_spos, m_polyPickExt, &m_filter, &m_startRef, 0);
-		m_navQuery->findNearestPoly(m_epos, m_polyPickExt, &m_filter, &m_endRef, 0);
-		int m_nstraightPath = 0;
-		if (m_startRef)
-		{
-			float t = 0;
-			int m_npolys = 0;
-			m_nstraightPath = 2;
-			
-			m_straightPath[0] = m_spos[0];
-			m_straightPath[1] = m_spos[1];
-			m_straightPath[2] = m_spos[2];
-
-			float m_hitNormal[3];
-			float m_hitPos[3];
-
-			dtPolyRef m_polys[MAX_POLYS];
-			m_navQuery->raycast(m_startRef, m_spos, m_epos, &m_filter, &t, m_hitNormal, m_polys, &m_npolys, MAX_POLYS);
-			if (t > 1)
-			{
-				// No hit
-				dtVcopy(m_hitPos, m_epos);
-				m_hitResult = false;
-			}
-			else
-			{
-				// Hit
-				dtVlerp(m_hitPos, m_spos, m_epos, t);
-				m_hitResult = true;
-			}
-			// Adjust height.
-			if (m_npolys > 0)
-			{
-				float h = 0;
-				m_navQuery->getPolyHeight(m_polys[m_npolys - 1], m_hitPos, &h);
-				m_hitPos[1] = h;
-			}
-			dtVcopy(&m_straightPath[3], m_hitPos);
-		}
-		return m_hitResult;
-	}
-
-	//寻路
-	_declspec(dllexport) bool FindPath(char* navmesh_path)
-	{
-		return true;
-	}
-
 
 }
-//
-//#if UNITYRECASTTEST
 
-//int main(int argc, char* argv[])
-//{
-//	//路径是基于工程的路径
-//	bool isLoad = LoadNavMesh("../../Bin/solo_navmesh.bin");
-//	if (!isLoad)
-//	{
-//		printf("文件加载失败=============");
-//	}
-//	return 0;
-//}
-//#endif // UNITYRECASTTEST
 
